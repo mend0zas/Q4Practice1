@@ -1,26 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Q4 Drill 1</title>
+<title>Electricity Consumption Checker</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background-color: #fff9c4;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.container{
+    background: #fff176;
+    padding: 30px;
+    width: 300px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+h2{
+    color: #5c4b00;
+}
+
+input{
+    padding: 10px;
+    width: 80%;
+    margin: 10px 0;
+    border: 1px solid #e6c200;
+    border-radius: 5px;
+}
+
+button{
+    padding: 10px 20px;
+    background-color: #fbc02d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #f9a825;
+}
+</style>
 </head>
+
 <body>
-    <input type="text" class="form-control" id="Age" placeholder="type here..">
-    <button class="btn btn-info" onclick="checkAge()">Check</button>
-    <script>
-        function checkAge(){
-             var kWh = document.getElementById("Age").value;
-            let cat1 = "Lifeline Consumer";
-            if (isNaN(kWh) || kWh < 0) {
-                alert("Please input a valid number.");
-            }
-            else if(kWh <= 100){
-                alert(cat1 + ": You have a discounted rate.")
-            }
-        }
-           
-           
-    </script>
+
+<div class="container">
+<h2>Electricity Checker</h2>
+
+<input type="text" id="kWh" placeholder="Enter kWh">
+<br>
+<button onclick="checkkWh()">Check</button>
+</div>
+
+<script>
+function checkkWh(){
+    var kWh = document.getElementById("kWh").value;
+    let cat1 = "Lifeline Consumer";
+
+    if (isNaN(kWh) || kWh < 0) {
+        alert("Please input a valid number.");
+    }
+    else if((kWh >= 0)&&(kWh <= 100)){
+        alert(cat1 + ": You have a discounted rate.");
+    }
+    else if((kWh >= 101)&&(kWh <= 200)){
+        alert(cat1 + ": You have a normal residential rate.");
+    }
+    else if((kWh >= 201)&&(kWh <= 300)){
+        alert(cat1 + ": You have a typical residential rate.");
+    }
+    else if((kWh >= 301)&&(kWh <= 500)){
+        alert(cat1 + ": You have a higher residential rate.");
+    }
+    else{
+        alert("kWh is above 500. You have very heavy electricity consumption.");
+    }
+}
+</script>
+
 </body>
 </html>
