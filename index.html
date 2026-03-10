@@ -7,11 +7,15 @@
 </head>
 <body>
     <h1>JavaScript Conditional Statements</h1>
+    <input type="text" class="form-control" id="Age" placeholder="type here..">
     <button class="btn btn-info" onclick="checkAge()">Check</button>
     <script>
         function checkAge(){
             var Age = document.getElementById("Age").value;
-            if(Age<18){
+            if(isNaN(Age)) || (Age < 0){
+                alert("You are underage.");
+
+            else if(Age<18){
                 alert("You are underage.");
             }
             else if(Age>18){
