@@ -10,10 +10,11 @@
     <button class="btn btn-info" onclick="checkAge()">Check</button>
     <script>
         function checkAge(){
-            if(15<18){
+            var Age = document.getElementById("Age").value;
+            if(Age<18){
                 alert("You are underage.");
             }
-            else if(19>18){
+            else if(Age>18){
                 alert("You are of legal age.");
             }
             else{
