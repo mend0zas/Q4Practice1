@@ -10,7 +10,7 @@
     <button class="btn btn-info" onclick="checkAge()">Check</button>
     <script>
         function checkAge(){
-            var kWh = document.getElementById("Age").value;
+             var kWh = document.getElementById("Age").value;
             let cat1 = "Lifeline Consumer";
             if (isNaN(kWh) || kWh < 0) {
                 alert("Please input a valid number.");
@@ -18,6 +18,8 @@
             else if(kWh <= 100){
                 alert(cat1 + ": You have a discounted rate.")
             }
+        }
+           
            
     </script>
 </body>
